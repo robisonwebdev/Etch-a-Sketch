@@ -5,7 +5,7 @@ function buildSketchPad(size) {
         const cellDiv = document.createElement('div');
 
         cellDiv;
-        cellDiv.setAttribute('class', 'cell');
+        cellDiv.setAttribute('class', 'cell cellRow');
         cellDiv.setAttribute('id', `row${i}`);
         sketchPad.appendChild(cellDiv);
 
