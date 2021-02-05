@@ -1,3 +1,5 @@
+
+
 function buildSketchPad(size) {
     const sketchPad = document.querySelector('#sketchPad');    
 
@@ -5,7 +7,7 @@ function buildSketchPad(size) {
         const cellDiv = document.createElement('div');
 
         cellDiv;
-        cellDiv.setAttribute('class', 'cell cellRow');
+        cellDiv.setAttribute('class', 'cellRow');
         cellDiv.setAttribute('id', `row${i}`);
         sketchPad.appendChild(cellDiv);
 
@@ -19,3 +21,14 @@ function buildSketchPad(size) {
         }
     }    
 }
+
+// function testCell() {
+//     const cell = document.querySelectorAll('.cell');
+
+//     cell.forEach((x) => {
+//             x.addEventListener('click', () => {
+//             console.log(x);
+//             // x.style.backgroundColor = `hsl(0, 100%, ${darkness -= 1}%)`;
+//         })
+//     })
+// }
