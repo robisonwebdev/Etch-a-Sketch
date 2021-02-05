@@ -21,6 +21,14 @@ function buildSketchPad(size, color) {
     }    
 }
 
+function removeCellRow() {
+    const cellRow = document.querySelectorAll('.cellRow');
+
+    cellRow.forEach((row) => {
+        row.remove();
+    })
+}
+
 function buildSketchSetupQuestions() {
     const parent = document.querySelector('#sketchSetup');
     const form = document.createElement('form');
@@ -75,7 +83,10 @@ function getSketchSetupAnswers() {
     const padColor = document.querySelector('#padColor');
     const submitBtn = document.querySelector('#submitBtn'); 
 
+    sketchSetup.style.display = 'flex';
+
     submitBtn.addEventListener('click', () => {
+        removeCellRow();
         buildSketchPad(padSize.value, padBackgroundColor.value);
         draw(padColor.value);
         sketchSetup.style.display = 'none';
@@ -92,6 +103,12 @@ function draw(color) {
     })
 }
 
+const newPadBtn = document.querySelector('#newSketchPad');
+const changeColors = document.querySelector('#changeColors');
+
 buildSketchSetupQuestions();
 getSketchSetupAnswers();
 
+newPadBtn.addEventListener('click', () => {
+    getSketchSetupAnswers();
+})
