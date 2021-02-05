@@ -36,6 +36,14 @@ body {
     width: 350px;
 }
 
+#sketchPadQuestions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 20px;    
+}
+
 #sketchPad {
     display: flex;
     flex-direction: column;
