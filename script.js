@@ -1,4 +1,4 @@
-function buildSketchPad(size, color) {
+function buildSketchPad(size) {
     const sketchPad = document.querySelector('#sketchPad');    
 
     for (let i = 1; i <= size; i++) {
@@ -62,7 +62,7 @@ function getSketchSetupAnswers() {
     const submitBtn = document.querySelector('#submitBtn'); 
 
     submitBtn.addEventListener('click', () => {
-        buildSketchPad(padSize.value, padColor.value);
+        buildSketchPad(padSize.value);
     })
 }
 
