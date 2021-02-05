@@ -1,4 +1,4 @@
-function buildSketchPad(size) {
+function buildSketchPad(size, color) {
     const sketchPad = document.querySelector('#sketchPad');    
 
     for (let i = 1; i <= size; i++) {
@@ -20,7 +20,7 @@ function buildSketchPad(size) {
     }    
 }
 
-function buildSketchPadQuestions() {
+function buildSketchSetupQuestions() {
     const parent = document.querySelector('#sketchSetup');
     const form = document.createElement('form');
     const padSize = document.createElement('input');
@@ -55,6 +55,19 @@ function buildSketchPadQuestions() {
 
     parent.appendChild(form);
 }
+
+function getSketchSetupAnswers() {
+    const padSize = document.querySelector('#padSize');
+    const padColor = document.querySelector('#padColor');
+    const submitBtn = document.querySelector('#submitBtn'); 
+
+    submitBtn.addEventListener('click', () => {
+        buildSketchPad(padSize.value, padColor.value);
+    })
+}
+
+buildSketchSetupQuestions();
+getSketchSetupAnswers();
 
 // function testCell() {
 //     const cell = document.querySelectorAll('.cell');
