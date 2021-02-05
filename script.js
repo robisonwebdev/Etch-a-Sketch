@@ -1,10 +1,11 @@
-function buildSketchPad(size) {
+function buildSketchPad(size, color) {
     const sketchPad = document.querySelector('#sketchPad');    
 
     for (let i = 1; i <= size; i++) {
         const cellDiv = document.createElement('div');
 
         cellDiv;
+        cellDiv.style.backgroundColor = color;
         cellDiv.setAttribute('class', 'cellRow');
         cellDiv.setAttribute('id', `row${i}`);
         sketchPad.appendChild(cellDiv);
@@ -24,6 +25,8 @@ function buildSketchSetupQuestions() {
     const parent = document.querySelector('#sketchSetup');
     const form = document.createElement('form');
     const padSize = document.createElement('input');
+    const padBackgroundColorLabel = document.createElement('label');
+    const padBackgroundColor = document.createElement('input');
     const padColorLabel = document.createElement('label');
     const padColor = document.createElement('input');
     const submitBtn = document.createElement('button');
@@ -37,18 +40,27 @@ function buildSketchSetupQuestions() {
     padSize.setAttribute('max', '100');
     padSize.setAttribute('required', '');
 
+    padBackgroundColorLabel.setAttribute('for', 'padBackgroundColor');
+    padBackgroundColorLabel.innerText = 'Pick pad background color';
+    padBackgroundColor.setAttribute('type', 'color');
+    padBackgroundColor.setAttribute('id', 'padBackgroundColor');
+    padBackgroundColor.setAttribute('name', 'padBackgroundColor');
+    padBackgroundColor.setAttribute('value', '#ffffff');
+
     padColorLabel.setAttribute('for', 'padColor');
-    padColorLabel.innerText = 'Pick sketch pad color';
+    padColorLabel.innerText = 'Pick sketch color';
     padColor.setAttribute('type', 'color');
     padColor.setAttribute('id', 'padColor');
     padColor.setAttribute('name', 'padColor');
-    padColor.setAttribute('value', '#ffffff');
+    padColor.setAttribute('value', '#000000');
 
     submitBtn.setAttribute('type', 'button');
     submitBtn.setAttribute('id', 'submitBtn');
     submitBtn.innerText = 'Submit';
 
     form.appendChild(padSize);
+    form.appendChild(padBackgroundColorLabel);
+    form.appendChild(padBackgroundColor);
     form.appendChild(padColorLabel);
     form.appendChild(padColor);
     form.appendChild(submitBtn);
@@ -57,25 +69,29 @@ function buildSketchSetupQuestions() {
 }
 
 function getSketchSetupAnswers() {
+    const sketchSetup = document.querySelector('#sketchSetup');
     const padSize = document.querySelector('#padSize');
+    const padBackgroundColor = document.querySelector('#padBackgroundColor');
     const padColor = document.querySelector('#padColor');
     const submitBtn = document.querySelector('#submitBtn'); 
 
     submitBtn.addEventListener('click', () => {
-        buildSketchPad(padSize.value);
+        buildSketchPad(padSize.value, padBackgroundColor.value);
+        draw(padColor.value);
+        sketchSetup.style.display = 'none';
+    })
+}
+
+function draw(color) {
+    const cell = document.querySelectorAll('.cell');
+
+    cell.forEach((x) => {
+        x.addEventListener('mouseover', () => {
+            x.style.backgroundColor = color;
+        })
     })
 }
 
 buildSketchSetupQuestions();
 getSketchSetupAnswers();
 
-// function testCell() {
-//     const cell = document.querySelectorAll('.cell');
-
-//     cell.forEach((x) => {
-//             x.addEventListener('click', () => {
-//             console.log(x);
-//             // x.style.backgroundColor = `hsl(0, 100%, ${darkness -= 1}%)`;
-//         })
-//     })
-// }
