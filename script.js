@@ -28,6 +28,8 @@ function buildSketchPadQuestions() {
     const padColor = document.createElement('input');
     const submitBtn = document.createElement('button');
 
+    form.setAttribute('id', 'sketchPadQuestions');
+
     padSize.setAttribute('type', 'number');
     padSize.setAttribute('id', 'padSize');
     padSize.setAttribute('placeholder', 'Enter Pad Size');
