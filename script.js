@@ -1,5 +1,3 @@
-
-
 function buildSketchPad(size) {
     const sketchPad = document.querySelector('#sketchPad');    
 
@@ -20,6 +18,40 @@ function buildSketchPad(size) {
             parent.appendChild(cellDiv);
         }
     }    
+}
+
+function buildSketchPadQuestions() {
+    const parent = document.querySelector('#sketchSetup');
+    const form = document.createElement('form');
+    const padSize = document.createElement('input');
+    const padColorLabel = document.createElement('label');
+    const padColor = document.createElement('input');
+    const submitBtn = document.createElement('button');
+
+    padSize.setAttribute('type', 'number');
+    padSize.setAttribute('id', 'padSize');
+    padSize.setAttribute('placeholder', 'Enter Pad Size');
+    padSize.setAttribute('min', '10');
+    padSize.setAttribute('max', '100');
+    padSize.setAttribute('required', '');
+
+    padColorLabel.setAttribute('for', 'padColor');
+    padColorLabel.innerText = 'Pick sketch pad color';
+    padColor.setAttribute('type', 'color');
+    padColor.setAttribute('id', 'padColor');
+    padColor.setAttribute('name', 'padColor');
+    padColor.setAttribute('value', '#ffffff');
+
+    submitBtn.setAttribute('type', 'button');
+    submitBtn.setAttribute('id', 'submitBtn');
+    submitBtn.innerText = 'Submit';
+
+    form.appendChild(padSize);
+    form.appendChild(padColorLabel);
+    form.appendChild(padColor);
+    form.appendChild(submitBtn);
+
+    parent.appendChild(form);
 }
 
 // function testCell() {
