@@ -116,8 +116,9 @@ function draw(color) {
 const newPadBtn = document.querySelector('#newSketchPad');
 const changeColors = document.querySelector('#changeColors');
 
+buildSketchPad(100, 'white');
+draw('black');
 buildSketchSetupQuestions();
-getSketchSetupAnswers();
 
 newPadBtn.addEventListener('click', () => {
     getSketchSetupAnswers();
