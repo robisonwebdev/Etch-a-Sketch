@@ -40,6 +40,7 @@ function buildSketchSetupQuestions() {
     const padColorLabel = document.createElement('label');
     const padColor = document.createElement('input');
     const submitBtn = document.createElement('button');
+    const cancelBtn = document.createElement('button');
 
     form.setAttribute('id', 'sketchPadQuestions');
 
@@ -72,7 +73,13 @@ function buildSketchSetupQuestions() {
 
     submitBtn.setAttribute('type', 'button');
     submitBtn.setAttribute('id', 'submitBtn');
+    submitBtn.setAttribute('class', 'setupBtns');
     submitBtn.innerText = 'Submit';
+
+    cancelBtn.setAttribute('type', 'button');
+    cancelBtn.setAttribute('id', 'cancelBtn');
+    cancelBtn.setAttribute('class', 'setupBtns');
+    cancelBtn.innerText = 'Cancel';
 
     form.appendChild(title);
     form.appendChild(padSizeLabel);
@@ -82,6 +89,7 @@ function buildSketchSetupQuestions() {
     form.appendChild(padColorLabel);
     form.appendChild(padColor);
     form.appendChild(submitBtn);
+    form.appendChild(cancelBtn);
 
     parent.appendChild(form);
 }
@@ -92,6 +100,7 @@ function getSketchSetupAnswers() {
     const padBackgroundColor = document.querySelector('#padBackgroundColor');
     const padColor = document.querySelector('#padColor');
     const submitBtn = document.querySelector('#submitBtn'); 
+    const cancelBtn = document.querySelector('#cancelBtn');
 
     sketchSetup.style.display = 'flex';
 
@@ -99,6 +108,10 @@ function getSketchSetupAnswers() {
         removeCellRow();
         buildSketchPad(padSize.value, padBackgroundColor.value);
         draw(padColor.value);
+        sketchSetup.style.display = 'none';
+    })
+
+    cancelBtn.addEventListener('click', () => {
         sketchSetup.style.display = 'none';
     })
 }
@@ -113,8 +126,8 @@ function draw(color) {
     })
 }
 
+
 const newPadBtn = document.querySelector('#newSketchPad');
-const changeColors = document.querySelector('#changeColors');
 
 buildSketchPad(100, 'white');
 draw('black');
