@@ -119,3 +119,11 @@ body {
     height: 100%;
     width: 100%;
 }
+
+small, #creatorDetails {
+    color: var(--white);
+}
+
+#creatorDetails:hover {
+    font-weight: bold;
+}
