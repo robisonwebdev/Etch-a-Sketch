@@ -24,7 +24,7 @@ body {
 }
 
 #sketchSetup {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
 
-    background-color: hsl(0, 100%, 47%);    /* Remove Later */
+    /* background-color: hsl(0, 100%, 47%);    Remove Later */
     height: 100%;
     width: 100%;
 }
