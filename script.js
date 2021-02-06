@@ -126,7 +126,7 @@ function draw(color) {
     })
 }
 
-
+// Add listener, start program with sketch pad already made
 const newPadBtn = document.querySelector('#newSketchPad');
 
 buildSketchPad(100, 'white');
