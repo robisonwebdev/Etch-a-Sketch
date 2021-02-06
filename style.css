@@ -1,6 +1,6 @@
 :root {
     --white: #f7f6e7;
-    --orange: #f2a154;
+    --offWhite: #e7e6e1;
     --black: #314e52;
 }
 
@@ -29,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    border: 5px solid var(--orange);
+    border: 5px solid black;
     border-radius: 25px;
     height: 80vh;
     overflow: hidden;
@@ -43,7 +43,7 @@ body {
     justify-content: center;
 
     background-color: var(--white);
-    border: 5px solid var(--orange);
+    border: 5px solid var(--black);
     height: 40vh;
     position: absolute;
     width: 350px;
@@ -72,7 +72,7 @@ body {
 }
 
 #newSketchPad {
-    background-color: #e7e6e1;
+    background-color: var(--offWhite);
     border: 2px solid black;
     border-radius: 20px;
     font-size: 14px;
