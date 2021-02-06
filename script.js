@@ -33,6 +33,7 @@ function buildSketchSetupQuestions() {
     const parent = document.querySelector('#sketchSetup');
     const form = document.createElement('form');
     const title = document.createElement('h3');
+    const padSizeDiv = document.createElement('div');
     const padSizeLabel = document.createElement('label');
     const padSize = document.createElement('input');
     const padBackgroundColorDiv = document.createElement('div');
@@ -49,6 +50,7 @@ function buildSketchSetupQuestions() {
     title.setAttribute('id', 'setupTitle');
     title.innerText = 'Sketch Pad Setup';
 
+    padSizeDiv.setAttribute('id', 'padSizeDiv');
     padSizeLabel.setAttribute('for', 'padSize');
     padSizeLabel.innerText = 'Pad Size:';
     padSize.setAttribute('type', 'number');
@@ -59,6 +61,7 @@ function buildSketchSetupQuestions() {
     padSize.setAttribute('required', '');
     padSize.setAttribute('value', '100');
 
+    padBackgroundColorDiv.setAttribute('id', 'padBackgroundColorDiv');
     padBackgroundColorLabel.setAttribute('for', 'padBackgroundColor');
     padBackgroundColorLabel.innerText = 'Background Color:';
     padBackgroundColor.setAttribute('type', 'color');
@@ -66,6 +69,7 @@ function buildSketchSetupQuestions() {
     padBackgroundColor.setAttribute('name', 'padBackgroundColor');
     padBackgroundColor.setAttribute('value', '#ffffff');
 
+    padColorDiv.setAttribute('id', 'padColorDiv');
     padColorLabel.setAttribute('for', 'padColor');
     padColorLabel.innerText = 'Sketch Color:';
     padColor.setAttribute('type', 'color');
@@ -83,15 +87,17 @@ function buildSketchSetupQuestions() {
     cancelBtn.setAttribute('class', 'setupBtns');
     cancelBtn.innerText = 'Cancel';
 
+    padSizeDiv.appendChild(padSizeLabel);
+    padSizeDiv.appendChild(padSize);
+
     padBackgroundColorDiv.appendChild(padBackgroundColorLabel);
     padBackgroundColorDiv.appendChild(padBackgroundColor);
 
-    padColorDiv.appendChild(padColorLabel)
-    padColorDiv.appendChild(padColor)
+    padColorDiv.appendChild(padColorLabel);
+    padColorDiv.appendChild(padColor);
 
     form.appendChild(title);
-    form.appendChild(padSizeLabel);
-    form.appendChild(padSize);
+    form.appendChild(padSizeDiv);
     form.appendChild(padBackgroundColorDiv);
     form.appendChild(padColorDiv);
     form.appendChild(submitBtn);
