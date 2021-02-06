@@ -1,3 +1,9 @@
+:root {
+    --white: #f7f6e7;
+    --orange: #f2a154;
+    --black: #314e52;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,8 +15,13 @@ body {
     align-items: center;
     justify-content: space-evenly;
 
+    background-color: var(--black);
     height: 100vh;
     width: 100vw;
+}
+
+#headerTitle {
+    color: var(--white);
 }
 
 #sketchPadContainer {
@@ -18,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    border: 5px solid black;
+    border: 5px solid var(--orange);
     border-radius: 25px;
     height: 80vh;
     overflow: hidden;
@@ -31,8 +42,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-color: white;
-    border: 1px solid greenyellow;
+    background-color: var(--white);
+    border: 5px solid var(--orange);
     height: 40vh;
     position: absolute;
     width: 350px;
@@ -44,6 +55,19 @@ body {
     align-items: stretch;
     justify-content: center;
     gap: 20px;    
+}
+
+#newSketchPad {
+    background-color: #e7e6e1;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+#newSketchPad:hover {
+    background-color: var(--white);
+    text-decoration: underline;
 }
 
 #sketchPad {
