@@ -35,8 +35,10 @@ function buildSketchSetupQuestions() {
     const title = document.createElement('h3');
     const padSizeLabel = document.createElement('label');
     const padSize = document.createElement('input');
+    const padBackgroundColorDiv = document.createElement('div');
     const padBackgroundColorLabel = document.createElement('label');
     const padBackgroundColor = document.createElement('input');
+    const padColorDiv = document.createElement('div');
     const padColorLabel = document.createElement('label');
     const padColor = document.createElement('input');
     const submitBtn = document.createElement('button');
@@ -81,13 +83,17 @@ function buildSketchSetupQuestions() {
     cancelBtn.setAttribute('class', 'setupBtns');
     cancelBtn.innerText = 'Cancel';
 
+    padBackgroundColorDiv.appendChild(padBackgroundColorLabel);
+    padBackgroundColorDiv.appendChild(padBackgroundColor);
+
+    padColorDiv.appendChild(padColorLabel)
+    padColorDiv.appendChild(padColor)
+
     form.appendChild(title);
     form.appendChild(padSizeLabel);
     form.appendChild(padSize);
-    form.appendChild(padBackgroundColorLabel);
-    form.appendChild(padBackgroundColor);
-    form.appendChild(padColorLabel);
-    form.appendChild(padColor);
+    form.appendChild(padBackgroundColorDiv);
+    form.appendChild(padColorDiv);
     form.appendChild(submitBtn);
     form.appendChild(cancelBtn);
 
