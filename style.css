@@ -18,8 +18,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    overflow: hidden;
+    border: 2px solid black;
     height: 80vh;
+    overflow: hidden;
     width: 80vw;
 }
 
@@ -60,13 +61,11 @@ body {
     justify-content: space-evenly;
     align-items: center;
 
-    /* background-color: hsl(0, 100%, 47%);    Remove Later */
     height: 100%;
     width: 100%;
 }
 
-.cell {
-    border: 1px solid black;    /* Remove Later - Maybe */
+.cell {    
     height: 100%;
     width: 100%;
 }
