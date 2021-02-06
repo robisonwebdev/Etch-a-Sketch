@@ -71,6 +71,17 @@ body {
     gap: 10px;
 }
 
+.setupBtns {
+    background-color: white;
+    border: 1px solid black;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.setupBtns:hover {
+    text-decoration: underline;
+}
+
 #newSketchPad {
     background-color: var(--offWhite);
     border: 2px solid black;
