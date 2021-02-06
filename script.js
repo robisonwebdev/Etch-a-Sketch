@@ -32,6 +32,8 @@ function removeCellRow() {
 function buildSketchSetupQuestions() {
     const parent = document.querySelector('#sketchSetup');
     const form = document.createElement('form');
+    const title = document.createElement('h3');
+    const padSizeLabel = document.createElement('label');
     const padSize = document.createElement('input');
     const padBackgroundColorLabel = document.createElement('label');
     const padBackgroundColor = document.createElement('input');
@@ -41,22 +43,28 @@ function buildSketchSetupQuestions() {
 
     form.setAttribute('id', 'sketchPadQuestions');
 
+    title.setAttribute('id', 'setupTitle');
+    title.innerText = 'Sketch Pad Setup';
+
+    padSizeLabel.setAttribute('for', 'padSize');
+    padSizeLabel.innerText = 'Pad Size:';
     padSize.setAttribute('type', 'number');
     padSize.setAttribute('id', 'padSize');
-    padSize.setAttribute('placeholder', 'Enter Pad Size');
+    padSize.setAttribute('name', 'padSize');
     padSize.setAttribute('min', '10');
-    padSize.setAttribute('max', '100');
+    padSize.setAttribute('max', '125');
     padSize.setAttribute('required', '');
+    padSize.setAttribute('value', '100');
 
     padBackgroundColorLabel.setAttribute('for', 'padBackgroundColor');
-    padBackgroundColorLabel.innerText = 'Pick pad background color';
+    padBackgroundColorLabel.innerText = 'Background Color:';
     padBackgroundColor.setAttribute('type', 'color');
     padBackgroundColor.setAttribute('id', 'padBackgroundColor');
     padBackgroundColor.setAttribute('name', 'padBackgroundColor');
     padBackgroundColor.setAttribute('value', '#ffffff');
 
     padColorLabel.setAttribute('for', 'padColor');
-    padColorLabel.innerText = 'Pick sketch color';
+    padColorLabel.innerText = 'Sketch Color:';
     padColor.setAttribute('type', 'color');
     padColor.setAttribute('id', 'padColor');
     padColor.setAttribute('name', 'padColor');
@@ -66,6 +74,8 @@ function buildSketchSetupQuestions() {
     submitBtn.setAttribute('id', 'submitBtn');
     submitBtn.innerText = 'Submit';
 
+    form.appendChild(title);
+    form.appendChild(padSizeLabel);
     form.appendChild(padSize);
     form.appendChild(padBackgroundColorLabel);
     form.appendChild(padBackgroundColor);
