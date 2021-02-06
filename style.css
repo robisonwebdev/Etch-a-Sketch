@@ -57,6 +57,20 @@ body {
     gap: 20px;    
 }
 
+#setupTitle {
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#padSizeDiv, #padBackgroundColorDiv, #padColorDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
 #newSketchPad {
     background-color: #e7e6e1;
     border: 2px solid black;
